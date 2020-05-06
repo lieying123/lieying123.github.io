@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -66,9 +65,9 @@ backcall(md5, slicemd5, file_length, file_name);
 }
 }
 function convertpcs(md5, slicemd5, file_length, file_name){
-return md5 + '#'+slicemd5+'#'+file_length+'#'+file_name;
+return 'BaiduPCS-Go rapidupload -length=' + file_length + ' -md5=' + md5 + ' -slicemd5=' + slicemd5 + ' \"\/' + file_name + '\"';
 }function convertpcs(md5, slicemd5, file_length, file_name){
-return md5 + '#'+slicemd5+'#'+file_length+'#'+file_name;
+return 'BaiduPCS-Go rapidupload -length=' + file_length + ' -md5=' + md5 + ' -slicemd5=' + slicemd5 + ' \"\/' + file_name + '\"';
 }
 		function convert(){
 		document.getElementById('convert').innerHTML = '';
@@ -77,7 +76,7 @@ return md5 + '#'+slicemd5+'#'+file_length+'#'+file_name;
     //code here using lines[i] which will give you each line
 	if (document.getElementById('pcs').className == 'btn btn-outline-primary active'){
 	getLink(lines[i],backcall = function(md5, slicemd5, file_length, file_name){
-	document.getElementById('convert').innerHTML += 'BaiduPCS-Go rapidupload -length=' + file_length + ' -md5=' + md5 + ' -slicemd5=' + slicemd5 + ' \"\/' + file_name + '\"' + '\n';
+	document.getElementById('convert').innerHTML += md5 + '#'+slicemd5+'#'+file_length+'#'+file_name+ '\n';
 	});
 	}
 	if (document.getElementById('bdpan').className == 'btn btn-outline-primary active'){
@@ -113,7 +112,7 @@ return md5 + '#'+slicemd5+'#'+file_length+'#'+file_name;
     <p><textarea name="link" id="link" class="form-control" placeholder="需要转换的链接" rows="8"></textarea></p>
 	    <div class="btn-group" data-toggle="buttons">
         <label class="btn btn-outline-primary active" id="pcs">
-            <input  type="radio" style="display:none;" id="pcs" name="options" checked> BaiduPCS-Go
+            <input  type="radio" style="display:none;" id="pcs" name="options" checked> 梦姬
         </label>
     </div>
 	<p><button class="btn btn-primary" onclick="convert();">转换</button>
