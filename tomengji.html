@@ -66,9 +66,9 @@ backcall(md5, slicemd5, file_length, file_name);
 }
 }
 function convertpcs(md5, slicemd5, file_length, file_name){
-return 'BaiduPCS-Go rapidupload -length=' + file_length + ' -md5=' + md5 + ' -slicemd5=' + slicemd5 + ' \"\/' + file_name + '\"';
+return md5 + '#'+slicemd5+'#'+file_length+'#'+file_name+ '\n';
 }function convertpcs(md5, slicemd5, file_length, file_name){
-return 'BaiduPCS-Go rapidupload -length=' + file_length + ' -md5=' + md5 + ' -slicemd5=' + slicemd5 + ' \"\/' + file_name + '\"';
+return md5 + '#'+slicemd5+'#'+file_length+'#'+file_name+ '\n'';
 }
 		function convert(){
 		document.getElementById('convert').innerHTML = '';
