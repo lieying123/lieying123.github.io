@@ -45,7 +45,7 @@ var file_length = de_b64.match(/\|([0-9]+)\|/)[1];
 var file_name = de_b64.match(/^(.+\.[a-zA-Z]{1,9})\|/)[1];
 backcall(md5, slicemd5, file_length, file_name);
 }
-else if (pcs){
+else if (mengji){
 var input = link;
 var length = input.match(/length\=([0-9]+)/)[1];
 var md5 = input.match(/\-md5\=(.{32})/)[1];
