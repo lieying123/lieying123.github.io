@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -45,7 +46,7 @@ var file_length = de_b64.match(/\|([0-9]+)\|/)[1];
 var file_name = de_b64.match(/^(.+\.[a-zA-Z]{1,9})\|/)[1];
 backcall(md5, slicemd5, file_length, file_name);
 }
-else if (mengji){
+else if (pcs){
 var input = link;
 var length = input.match(/length\=([0-9]+)/)[1];
 var md5 = input.match(/\-md5\=(.{32})/)[1];
@@ -54,7 +55,7 @@ var file_name = input.match(/\"(.+)\"/)[1];
 backcall(md5, slicemd5, length, file_name);
 
 }
-else if (pcs){
+else if (mengji){
 var input = link;
 var md5 = input.match(/^(.{32})#/)[1];
 var slicemd5 = input.match(/#(.{32})#/)[1];
@@ -111,7 +112,7 @@ return 'BaiduPCS-Go rapidupload -length=' + file_length + ' -md5=' + md5 + ' -sl
     <label for="link">秒传链接</label>
     <p><textarea name="link" id="link" class="form-control" placeholder="需要转换的链接" rows="8"></textarea></p>
 	    <div class="btn-group" data-toggle="buttons">
-        <label class="btn btn-outline-primary active" id="pcs">
+        <label class="btn btn-outline-primary" id="mengji">
             <input  type="radio" style="display:none;" id="mengji" name="options"> 梦姬
         </label>
     </div>
